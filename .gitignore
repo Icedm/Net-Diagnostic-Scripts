@@ -1,0 +1,23 @@
+# System files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode
+.idea
+
+# Log files
+*.log
+*.txt
+
+# Batch-specific
+*.tmp
+
+# Build outputs
+bin/
+obj/
+
+# IDE
+.vscode/
+*.code-workspace
