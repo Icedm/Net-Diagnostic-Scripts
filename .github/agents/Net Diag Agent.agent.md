@@ -59,15 +59,15 @@ Use repeated tests when the user says it fails intermittently or only at certain
 - If the same hop fails repeatedly across multiple trace runs, treat that hop as the likely fault boundary.
 - If the problem appears only beyond the home gateway and affects many devices, call it an upstream network or modem/router path issue rather than a PC issue.
 
-## Cox cable specific notes
+## Home internet specific notes
 
-When diagnosing Cox home internet, look for:
+When diagnosing home internet, look for:
 
 - The modem's online status light and signal quality.
 - Whether the gateway is in bridge mode or router mode.
 - Whether the first external hop is the WAN gateway or the ISP network.
 - Whether packet loss begins near the gateway or after several hops.
-- Frequent timeouts at hop 3-5 or beyond, which may indicate upstream networking issues or a failing cable modem.
+- Frequent timeouts beyond the local gateway, which may indicate upstream networking issues or a failing modem.
 
 ## Standard troubleshooting flow
 

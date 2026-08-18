@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-08-17
+
+### Changed
+- Renamed the provider-specific diagnostic skill to a generic home internet diagnostics flow.
+- Removed Cox-specific branding from README, agent guidance, and changelog references.
+- Kept the troubleshooting guidance provider-neutral for any home ISP or modem setup.
+
 ## [1.0.0] - 2026-08-17
 
 ### Added
@@ -39,7 +46,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - ✅ Compatible with Windows 10/11 and Server 2016+
 - ✅ No installation required — just run the scripts
 - ✅ Clear, actionable output for network diagnostics
-- ✅ Built-in guidance for common ISP issues (Cox, etc.)
+- ✅ Built-in guidance for common ISP and home network issues
 
 ### Documentation
 - Complete README with platform badges
@@ -48,7 +55,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Gateway ping failures
   - Public IP connectivity issues
   - Traceroute hop failures
-- Example workflows for Cox cable internet
+- Example workflows for home internet troubleshooting
 
 ---
 

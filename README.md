@@ -160,7 +160,7 @@ loop_ping_public.bat
 
 ## Example Scenarios
 
-### Troubleshooting Cox Cable Internet
+### Troubleshooting Home Internet Connectivity
 
 ```cmd
 :: Check gateway
@@ -171,7 +171,7 @@ quick_net_check.bat
 :: 2. Plug back in, wait 2-3 minutes
 :: 3. Run again
 
-:: If trace fails at hop 5, likely Cox backbone issue:
+:: If trace fails beyond the local gateway, likely ISP or upstream path issue:
 loop_trace.bat
 ```
 

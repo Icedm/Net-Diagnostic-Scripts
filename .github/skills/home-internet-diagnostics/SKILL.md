@@ -1,11 +1,11 @@
 ---
-name: Cox Cable Diagnostics
-description: Diagnose Cox home internet problems by checking modem status, local gateway health, packet loss, and upstream hop behavior using quick Windows commands.
+name: Home Internet Diagnostics
+description: Diagnose home internet problems by checking modem status, local gateway health, packet loss, and upstream hop behavior using quick Windows commands.
 ---
 
-# Cox Cable Diagnostics
+# Home Internet Diagnostics
 
-Use this skill when the issue is home internet on Cox cable service and you need to decide whether the problem is local, modem-related, router-related, or upstream.
+Use this skill when the issue is home internet service and you need to decide whether the problem is local, modem-related, router-related, or upstream.
 
 ## Quick checklist
 
