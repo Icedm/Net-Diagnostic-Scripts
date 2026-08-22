@@ -95,7 +95,7 @@ loop_trace.bat
 Best for detecting patterns—if hop 5 fails consistently, you've found the culprit.
 
 ### loop_ping_public.bat
-Continuously pings Google's public DNS (8.8.8.8) to monitor packet loss:
+Continuously pings Google's public DNS (8.8.8.8) to monitor packet loss. The script asks how many pings to send and how many seconds to wait between pings; the defaults are 10 pings and 1 second:
 
 ```cmd
 loop_ping_public.bat
@@ -206,4 +206,4 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 
 ---
 
-**Last Updated:** 2026-08-17 | **Maintained by:** [@Icedm](https://github.com/Icedm)
+**Last Updated:** 2026-08-22 | **Maintained by:** [@Icedm](https://github.com/Icedm)
