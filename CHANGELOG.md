@@ -11,6 +11,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added a configurable delay between public ping checks.
 - Added a one-second default delay when no interval is entered.
 
+## [1.3.0] - 2026-08-22
+
+### Added
+- Added optional live logging to **loop_ping_public.bat**.
+- Added explicit success/failure results, timestamps, and a run summary for ISP troubleshooting.
+- Excluded generated log files from version control.
+
 ## [1.1.0] - 2026-08-17
 
 ### Changed

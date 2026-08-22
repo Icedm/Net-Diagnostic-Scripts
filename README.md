@@ -95,13 +95,13 @@ loop_trace.bat
 Best for detecting patterns—if hop 5 fails consistently, you've found the culprit.
 
 ### loop_ping_public.bat
-Continuously pings Google's public DNS (8.8.8.8) to monitor packet loss. The script asks how many pings to send and how many seconds to wait between pings; the defaults are 10 pings and 1 second:
+Continuously pings Google's public DNS (8.8.8.8) to monitor packet loss. The script asks how many pings to send, how many seconds to wait between pings, and whether to create a log file. The defaults are 10 pings and 1 second:
 
 ```cmd
 loop_ping_public.bat
 ```
 
-**Tip:** Let this run for 1-2 minutes to establish a baseline. Stop with `Ctrl+C`.
+When logging is enabled, each ping's normal output and an explicit `RESULT: SUCCESS` or `RESULT: FAILURE` line are appended to the filename you provide. The default filename is `ping_log.txt` in the current folder. Let this run for 1-2 minutes to establish a baseline, or longer when collecting evidence for your ISP. Stop with `Ctrl+C` if needed; the log is written as the test runs.
 
 ---
 
