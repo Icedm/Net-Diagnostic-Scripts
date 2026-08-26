@@ -21,3 +21,4 @@ obj/
 # IDE
 .vscode/
 *.code-workspace
+ping_failure_chart.html
