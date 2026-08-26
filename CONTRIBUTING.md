@@ -42,6 +42,19 @@ Before submitting a PR:
 - Run the script with and without admin privileges
 - Verify error handling
 
+## AI-Assisted Contributions
+
+AI coding tools are welcome. Contributors remain responsible for the pull request, including its code, claims, security, and compatibility.
+
+When using AI assistance:
+- Review every generated change before committing it
+- Test the complete workflow on Windows 10/11 or Windows Server 2016+
+- Do not include passwords, tokens, private network details, or other sensitive data in prompts, issues, logs, or commits
+- Disclose substantial AI assistance in the pull request using the checklist
+- Explain any behavior or design decisions that may not be obvious from the diff
+
+An AI developer may be given a specific issue and this repository's `CONTRIBUTING.md`, but the final pull request must still be opened and reviewed by a human contributor.
+
 ## Commit Message Format
 
 Use clear, descriptive messages:
