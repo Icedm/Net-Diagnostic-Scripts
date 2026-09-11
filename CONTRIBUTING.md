@@ -42,6 +42,68 @@ Before submitting a PR:
 - Run the script with and without admin privileges
 - Verify error handling
 
+## Testing Procedures
+
+These procedures apply to Windows batch script changes. Follow them before opening a pull request.
+
+### Supported Windows versions
+
+Test on at least one of:
+
+- Windows 10 (any edition)
+- Windows 11 (any edition)
+- Windows Server 2016 or later
+
+State the exact version you tested on in the pull request (for example "Windows 11 23H2").
+
+### Run from the scripts directory
+
+The scripts resolve paths relative to the repository layout and are designed to be run from the `scripts` directory — `NetTools.bat` launches the other scripts by filename, so they will not work correctly when invoked from the repository root or another working directory. Run each script from `scripts` (or the directory stated in the script's header comment).
+
+### Test with and without administrator privileges (optional)
+
+Some diagnostics may behave differently when elevated, but elevation is not required by the current scripts. Run each changed script both ways and confirm it fails gracefully without elevation and produces the expected output with it:
+
+1. In a normal (non-elevated) prompt — confirm a clear message instead of a crash.
+2. In an elevated prompt (`Run as administrator`) — confirm the diagnostic output.
+
+### Test default values
+
+Run the script with no arguments and confirm the documented defaults are used.
+
+### Test unexpected input
+
+The current scripts do not strictly validate non-numeric or out-of-range values, so confirm how each script behaves rather than assuming it rejects bad input. For inputs that should be numeric, observe and document what happens with empty, non-numeric, or out-of-range values (the script may echo the value, ignore it, or fall back to a default). Report anything that looks like a crash or a silent wrong result.
+
+### Test logging-enabled and logging-disabled behavior
+
+If the script writes log files:
+
+- With logging on, confirm the log file is created in the documented location.
+- With logging off (or the default), confirm no unexpected log file is created.
+
+### Confirm generated files are not committed
+
+Log files, captures, or any generated artifacts from your test runs must not be committed. Check `git status` before staging and add the file to `.gitignore` if the script generates it in the repo directory.
+
+### Report the Windows version
+
+Include the Windows version and build (for example "Windows 11 Pro 23H2, build 22631") in the pull request description, especially when behaviour differs from what you expected.
+
+### Include relevant command output
+
+Paste the relevant console output (success and failure cases) into the pull request, not just a summary. If output is long, include the key sections and a note about the rest.
+
+## Pull Request Checklist
+
+- [ ] Tested on the Windows versions listed in the pull request
+- [ ] Ran with and without administrator privileges (where relevant)
+- [ ] Tested default values and unexpected input; documented observed behaviour
+- [ ] Tested logging-enabled and logging-disabled behaviour (if applicable)
+- [ ] No generated files (logs, captures) committed; `git status` is clean of artifacts
+- [ ] Windows version and relevant command output included in the description
+
+
 ## AI-Assisted Contributions
 
 AI coding tools are welcome. Contributors remain responsible for the pull request, including its code, claims, security, and compatibility.
@@ -69,77 +131,3 @@ docs: update README with new examples
 Open a GitHub Issue to discuss ideas before investing time in development.
 
 Thanks for contributing! 🙌
-
-## Testing Procedures
-
-These procedures apply to Windows batch script changes. Follow them before opening a pull request.
-
-### Supported Windows versions
-
-Test on at least one of:
-
-- Windows 10 (any edition)
-- Windows 11 (any edition)
-- Windows Server 2016 or later
-
-State the exact version you tested on in the pull request (for example "Windows 11 23H2").
-
-### Run from the correct directory
-
-The scripts resolve paths relative to the repository layout. Run them from the
-repository root (or the directory stated in the script's header comment), not
-from a random working directory, or relative paths will break.
-
-### Test with and without administrator privileges
-
-Many network diagnostics need elevation, but they must also fail gracefully
-without it. Run each changed script twice:
-
-1. In a normal (non-elevated) prompt — confirm a clear message instead of a crash.
-2. In an elevated prompt (`Run as administrator`) — confirm the diagnostic output.
-
-### Test default values
-
-Run the script with no arguments and confirm the documented defaults are used.
-
-### Test invalid user input
-
-- Empty input where a value is required
-- Non-numeric values where a number is expected
-- Out-of-range values (for example a port number above 65535)
-
-Confirm the script prints a helpful error and exits cleanly.
-
-### Test logging-enabled and logging-disabled behavior
-
-If the script writes log files:
-
-- With logging on, confirm the log file is created in the documented location.
-- With logging off (or the default), confirm no unexpected log file is created.
-
-### Confirm generated files are not committed
-
-Log files, captures, or any generated artifacts from your test runs must not be
-committed. Check `git status` before staging and add the file to `.gitignore`
-if the script generates it in the repo directory.
-
-### Report the Windows version
-
-Include the Windows version and build (for example "Windows 11 Pro 23H2, build
-22631") in the pull request description, especially when behaviour differs from
-what you expected.
-
-### Include relevant command output
-
-Paste the relevant console output (success and failure cases) into the pull
-request, not just a summary. If output is long, include the key sections and a
-note about the rest.
-
-## Pull Request Checklist
-
-- [ ] Tested on the Windows versions listed in the pull request
-- [ ] Ran with and without administrator privileges
-- [ ] Tested default values and invalid input
-- [ ] Tested logging-enabled and logging-disabled behaviour
-- [ ] No generated files (logs, captures) committed; `git status` is clean of artifacts
-- [ ] Windows version and relevant command output included in the description
