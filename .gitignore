@@ -22,3 +22,5 @@ obj/
 .vscode/
 *.code-workspace
 ping_failure_chart.html
+before_after_internet_analysis.html
+ping_failure_chart_24hr.html
